@@ -60,3 +60,23 @@ INSERT INTO players (full_name, position, price, points, fk_team) VALUES
 ('Declan Rice', 'MID', 5.9, 11, 1),
 ('Donyell Malen', 'FWD', 2.3, 16, 2),
 ('Benjamin Šeško', 'FWD', 6.5, 9, 14);
+
+-- Added a new column 'total_points' into table 'players'
+ALTER TABLE players
+ADD total_points INT AFTER points;
+
+-- Update price, total_points of players in table 'players'
+UPDATE players SET price = 5.0, total_points = 9 WHERE full_name = 'Senne Lammens';
+UPDATE players SET price = 5.9, total_points = 48 WHERE full_name = 'Jurrien Timber';
+UPDATE players SET price = 5.1, total_points = 43 WHERE full_name = 'Dan Burn';
+UPDATE players SET price = 4.2, total_points = 22 WHERE full_name = 'Jan Paul van Hecke';
+UPDATE players SET price = 7.9, total_points = 66 WHERE full_name = 'Antoine Semenyo';
+UPDATE players SET price = 6.7, total_points = 39 WHERE full_name = 'Mohammed Kudus';
+UPDATE players SET price = 6.5, total_points = 40 WHERE full_name = 'Declan Rice';
+UPDATE players SET price = 5.1, total_points = 22 WHERE full_name = 'Donyell Malen';
+UPDATE players SET price = 7.3, total_points = 23 WHERE full_name = 'Benjamin Šeško';
+
+-- Insert two more players in table 'players'
+INSERT INTO players (full_name, position, price, points, total_points, fk_team) VALUES
+('Bruno Guimaraes', 'MID', 6.5, 14, 30, 15),
+('Josko Gvardiol', 'DEF', 5.9, 12, 24, 13);

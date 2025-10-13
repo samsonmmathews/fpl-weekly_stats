@@ -12,14 +12,14 @@
     <?php
         include 'connect.php';
 
-        $query = "SELECT * FROM players ORDER BY points DESC";
+        $query = "SELECT * FROM players ORDER BY total_points DESC";
         $result = mysqli_query($connect, $query);
 
         if (mysqli_num_rows($result) > 0)
         {
             echo "full_name - price - points <br>";
             while ($row = mysqli_fetch_assoc($result)) {
-                echo $row['full_name'] . " - " . $row['price'] . " - " . $row['points'] . "<br>";
+                echo $row['full_name'] . " - " . $row['price'] . " - " . $row['points'] . $row['price'] . " - " . $row['total_points'] . "<br>";
             }
         }
         else {
