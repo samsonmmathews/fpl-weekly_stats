@@ -26,7 +26,7 @@ CREATE TABLE gameweeks (
     FOREIGN KEY (player_id) REFERENCES players(player_id)
 );
 
--- Insert into table 'teams'
+-- Insert data into table 'teams'
 INSERT INTO teams (team_name, stadium, manager_name) VALUES
 ('Arsenal', 'Emirates Stadium', 'Mikel Arteta'),
 ('Aston Villa', 'Villa Park', 'Unai Emery'),
@@ -49,7 +49,7 @@ INSERT INTO teams (team_name, stadium, manager_name) VALUES
 ('West Ham United', 'London Stadium', 'Nuno Espírito Santo'),
 ('Wolverhampton Wanderers', 'Molineux Stadium', 'Vitor Pereira');
 
--- Insert into table 'players'
+-- Insert data into table 'players'
 INSERT INTO players (full_name, position, price, points, fk_team) VALUES
 ('Senne Lammens', 'GK', 4.5, 9, 14),
 ('Jurrien Timber', 'DEF', 5.8, 12, 1),
