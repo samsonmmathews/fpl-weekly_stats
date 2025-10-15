@@ -80,3 +80,8 @@ UPDATE players SET price = 7.3, total_points = 23 WHERE full_name = 'Benjamin Š
 INSERT INTO players (full_name, position, price, points, total_points, fk_team) VALUES
 ('Bruno Guimaraes', 'MID', 6.5, 14, 30, 15),
 ('Josko Gvardiol', 'DEF', 5.9, 12, 24, 13);
+
+-- Updated Benjamin Sesko's name
+UPDATE players
+SET full_name = 'Benjamin Sesko'
+WHERE full_name = 'Benjamin Šeško';
