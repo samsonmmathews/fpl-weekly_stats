@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FPL Database</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body>
+<body class="container mt-4">
 
-    <h1>Fantasy Premier League Database</h1>
+    <h1 class="text-center mb-4">Fantasy Premier League Database</h1>
 
     <?php
     include 'connect.php';
@@ -27,38 +28,46 @@
     }
 
     if (mysqli_num_rows($result) > 0) {
-        echo "<table>";
-        echo "<tr>
-                <th>Full Name</th>
-                <th>Position</th>
-                <th>Price</th>
-                <th>Points</th>
-                <th>Total Points</th>
-                <th>Team Name</th>
-                <th>Manager Name</th>
-                <th>Home Stadium</th>
-              </tr>";
+        echo '<div class="table-responsive">';
+        echo "<table class='table table-striped table-bordered table-sm align-middle text-center'>";
+        echo '<thead class="table-dark">
+                <tr>
+                    <th>Full Name</th>
+                    <th>Position</th>
+                    <th>Price</th>
+                    <th>Points</th>
+                    <th>Total Points</th>
+                    <th>Team Name</th>
+                    <th>Manager Name</th>
+                    <th>Home Stadium</th>
+                </tr>
+            </thead>';
+
+        echo '<tbody>';
 
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>" . $row['full_name'] . "</td>";
             echo "<td>" . $row['position'] . "</td>";
-            echo "<td>" . $row['price'] . "</td>";
+            echo "<td>£" . number_format($row['price'], 1) . "m</td>";
             echo "<td>" . $row['points'] . "</td>";
             echo "<td>" . $row['total_points'] . "</td>";
             echo "<td>" . $row['team_name'] . "</td>";
             echo "<td>" . $row['manager_name'] . "</td>";
             echo "<td>" . $row['stadium'] . "</td>";
+            echo "</tr>";
         }
+        echo "</tbody>";
         echo "</table>";
+        echo "</div>";
     } else {
-        echo "<p>No players found.</p>";
+        echo "<div class='alert alert-warning text-center'>No players found.</div>";
     }
 
     mysqli_close($connect);
     ?>
 
-    <footer>
+    <footer class="text-center">
         <p>© 2025 Fantasy Premier League Database | Matchweek 7 stats</p>
     </footer>
 
