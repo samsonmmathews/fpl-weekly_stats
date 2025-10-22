@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FPL Database</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -60,6 +61,25 @@
     <footer>
         <p>© 2025 Fantasy Premier League Database | Matchweek 7 stats</p>
     </footer>
+
+    <style>
+        body {
+            background-color: #f8f8f8;
+        }
+        h1 {
+            margin-top: 30px;
+            color: #252626ff;
+        }
+        table {
+            background-color: white;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #252626ff;
+            color: #fff;
+        }
+    </style>
 
 </body>
 
