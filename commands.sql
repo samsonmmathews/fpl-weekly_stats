@@ -85,3 +85,6 @@ INSERT INTO players (full_name, position, price, points, total_points, fk_team) 
 UPDATE players
 SET full_name = 'Benjamin Sesko'
 WHERE full_name = 'Benjamin Šeško';
+
+-- Deleted table 'gameweeks'
+DROP TABLE gameweeks;
