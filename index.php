@@ -17,9 +17,9 @@
 
         if (mysqli_num_rows($result) > 0)
         {
-            echo "full_name - price - points <br>";
+            echo "full_name - price - points - total points <br>";
             while ($row = mysqli_fetch_assoc($result)) {
-                echo $row['full_name'] . " - " . $row['price'] . " - " . $row['points'] . $row['price'] . " - " . $row['total_points'] . "<br>";
+                echo $row['full_name'] . " - " . $row['price'] . " - " . $row['points'] .  " - " . $row['total_points'] . "<br>";
             }
         }
         else {
